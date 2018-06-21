@@ -1,0 +1,23 @@
+﻿<Window x:Class="OnTour.Interface.LoginAlumno"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnTour.Interface"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d" Height="430" Width="550" ResizeMode="NoResize" WindowStyle="None">
+    <Grid>
+        <Grid Height="200" VerticalAlignment="Top">
+            <Controls:Tile x:Name="Alumno" Height="200"  Width="200" Title="Alumno" HorizontalTitleAlignment="Center" TitleFontSize="16" >
+                <Image Source="Images/User.png" Height="114" Width="132"></Image>
+            </Controls:Tile>
+        </Grid>
+        <Grid Height="230" VerticalAlignment="Bottom">
+            <TextBox x:Name="TxtNombre" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Nombre" Height="23"  Width="154" Margin="195,60,201,144"/>
+            <TextBox x:Name="TxtClave" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Contraseña" Height="23"  Width="154" Margin="195,91,201,113"/>
+            
+            <Button x:Name="BtnIngresar" Content="Ingresar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="154" Margin="195,153,0,0" Click="BtnIngresar_Click"/>
+        </Grid>
+        
+    </Grid>
+</Window>
