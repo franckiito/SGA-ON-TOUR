@@ -59,7 +59,7 @@ namespace OnTour.Interface
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

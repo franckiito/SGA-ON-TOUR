@@ -17,9 +17,9 @@ namespace OnTour.Interface
     /// <summary>
     /// Lógica de interacción para LoginAlumno.xaml
     /// </summary>
-    public partial class LoginAlumno : UserControl
+    public partial class LoginRepresentante : UserControl
     {
-        public LoginAlumno()
+        public LoginRepresentante()
         {
             InitializeComponent();
         }
@@ -31,6 +31,11 @@ namespace OnTour.Interface
             clave = TxtClave.Text;
 
 
+        }
+
+        private void BtnHome_Click(object sender, RoutedEventArgs e)
+        {
+            LoginRepresentante.
         }
     }
 }

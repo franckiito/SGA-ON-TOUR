@@ -17,9 +17,9 @@ namespace OnTour.Interface
     /// <summary>
     /// Lógica de interacción para LoginAlumno.xaml
     /// </summary>
-    public partial class LoginAlumno : UserControl
+    public partial class LoginGerente : UserControl
     {
-        public LoginAlumno()
+        public LoginGerente()
         {
             InitializeComponent();
         }

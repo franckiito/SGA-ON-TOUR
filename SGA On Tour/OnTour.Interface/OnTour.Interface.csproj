@@ -72,6 +72,12 @@
     <Compile Include="InformacionGira.xaml.cs">
       <DependentUpon>InformacionGira.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoginGerente.xaml.cs">
+      <DependentUpon>LoginGerente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRepresentante.xaml.cs">
+      <DependentUpon>LoginRepresentante.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginAlumno.xaml.cs">
       <DependentUpon>LoginAlumno.xaml</DependentUpon>
     </Compile>
@@ -84,6 +90,14 @@
     <Page Include="InformacionGira.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginGerente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoginRepresentante.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="LoginAlumno.xaml">
       <SubType>Designer</SubType>
