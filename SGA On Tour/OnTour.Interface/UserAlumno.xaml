@@ -1,4 +1,4 @@
-﻿<Window x:Name="BtnSalir" x:Class="OnTour.Interface.UserAlumno"
+﻿<Window x:Class="OnTour.Interface.UserAlumno"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OnTour.Interface"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
-        mc:Ignorable="d" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Activated="BtnSalir_Click">
+        mc:Ignorable="d" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
@@ -32,15 +32,9 @@
     </Window.Triggers>
 
     <Grid>
-        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" Margin="0,0,-6,0">
-            <Grid Width="360" Height="430" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Controls:Tile  Height="200"  Width="200" Title="Gerente" HorizontalTitleAlignment="Center" TitleFontSize="16">
-                    <Image Source="Images/Gerente.png" Height="113" Width="121"></Image>
-                </Controls:Tile>
-            </Grid>
-        </Grid>
+        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" Margin="0,0,-6,0"/>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
-            <Button   Background="{x:Null}" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" >
+            <Button x:Name="BtnExit"  Background="{x:Null}" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Click="BtnExit_Click" >
                 <materialDesign:PackIcon Kind="ExitToApp" Width="25" Height="25"/>
             </Button>
             <!--<Grid.Effect>
@@ -94,7 +88,7 @@
                     <ListViewItem x:Name="ItemInformacionGira" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Information" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Inforcion Gira" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Informacion Gira" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

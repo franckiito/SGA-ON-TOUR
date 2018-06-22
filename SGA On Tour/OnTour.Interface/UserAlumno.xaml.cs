@@ -57,7 +57,7 @@ namespace OnTour.Interface
             }
         }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace OnTour.Interface
 {
     /// <summary>
@@ -30,7 +31,17 @@ namespace OnTour.Interface
             rut = TxtRut.Text;
             clave = TxtClave.Text;
 
+            if(rut == "123" )
+            {
+                if (clave == "123")
+                {
+                    
+                    UserAlumno alumno = new UserAlumno(); 
+                    alumno.Show();
+                }
+            }
 
         }
+        
     }
 }

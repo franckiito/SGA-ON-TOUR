@@ -9,31 +9,26 @@
         mc:Ignorable="d" Height="600" Width="1080" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
         <Grid  Height="170" VerticalAlignment="Top" >
-            <Button x:Name="BtnHome" Background="{x:Null}" Height="60" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtnHome_Click"  >
-                <materialDesign:PackIcon Kind="Home" Width="25" Height="25"/>
-            </Button>
             <Button x:Name="BtnSalir"  Background="{x:Null}" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Click="BtnSalir_Click" >
                 <materialDesign:PackIcon Kind="ExitToApp" Width="25" Height="25"/>
             </Button>
-            <Image Source="Images/Logo.png" HorizontalAlignment="Center"/>
+            <Image Source="Images/Logo.png" HorizontalAlignment="Center" Margin="417,0,446,32" Width="217"/>
 
         </Grid>
-        <Grid x:Name="GridMain" Height="430" VerticalAlignment="Bottom">
-            <Grid Width="360" Height="430" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-                <Controls:Tile x:Name="Alumno" Height="200"  Width="200" Title="Alumno" HorizontalTitleAlignment="Center" TitleFontSize="16" Click="Alumno_Click">
-                    <Image Source="Images/User.png" Height="113" Width="121"></Image>
+        <Grid Height="430" Width="400" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Grid Width="325" Height="430" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <Controls:Tile x:Name="Alumno" Height="Auto"  Width="Auto" Title="Alumno" HorizontalTitleAlignment="Center" TitleFontSize="16" Click="Alumno_Click" Margin="103,26,100,307">
+                    <Image Source="Images/User.png" Height="46" Width="67"></Image>
+                </Controls:Tile>
+                <Controls:Tile x:Name="Gerente" Height="Auto"  Width="Auto" Title="Gerente" HorizontalTitleAlignment="Center" TitleFontSize="16" Click="Gerente_Click" Margin="103,152,100,181">
+                    <Image Source="Images/Gerente.png" Height="46" Width="67"/>
+                </Controls:Tile>
+                <Controls:Tile x:Name="Representante" Height="Auto"  Width="Auto" Title="Representante" HorizontalTitleAlignment="Center" TitleFontSize="16" Click="Representante_Click" Margin="103,271,100,62">
+                    <Image Source="Images/Representante.png" Height="46" Width="67"/>
                 </Controls:Tile>
             </Grid>
-            <Grid Width="360" Height="430" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                <Controls:Tile x:Name="Representante" Height="200"  Width="200" Title="Representante" HorizontalTitleAlignment="Center" TitleFontSize="16" Click="Representante_Click">
-                    <Image Source="Images/Representante.png" Height="113" Width="121"></Image>
-                </Controls:Tile>
-            </Grid>
-            <Grid Width="360" Height="430" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Controls:Tile x:Name="Gerente"  Height="200"  Width="200" Title="Gerente" HorizontalTitleAlignment="Center" TitleFontSize="16" Click="Gerente_Click">
-                    <Image Source="Images/Gerente.png" Height="113" Width="121"></Image>
-                </Controls:Tile>
-            </Grid>
+        </Grid>
+        <Grid x:Name="GridMain" Width="680" HorizontalAlignment="Right" Height="430" VerticalAlignment="Bottom" > 
             
         </Grid>
     </Grid>
