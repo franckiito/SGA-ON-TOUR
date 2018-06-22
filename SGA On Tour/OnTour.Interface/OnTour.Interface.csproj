@@ -107,6 +107,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserRepresentante.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserGerente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserAlumno.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,6 +122,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserRepresentante.xaml.cs">
+      <DependentUpon>UserRepresentante.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserGerente.xaml.cs">
+      <DependentUpon>UserGerente.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserAlumno.xaml.cs">
       <DependentUpon>UserAlumno.xaml</DependentUpon>
