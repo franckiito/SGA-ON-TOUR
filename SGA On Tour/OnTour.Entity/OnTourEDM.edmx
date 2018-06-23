@@ -1,0 +1,1078 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OnTourModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Actividad">
+          <Key>
+            <PropertyRef Name="IdActividad" />
+          </Key>
+          <Property Name="IdActividad" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActividadTuristica">
+          <Key>
+            <PropertyRef Name="IdAct" />
+          </Key>
+          <Property Name="IdAct" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Alumno">
+          <Key>
+            <PropertyRef Name="RutAlumno" />
+          </Key>
+          <Property Name="RutAlumno" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Abono" Type="int" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Apoderado_Rut" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Contrasena" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Apoderado">
+          <Key>
+            <PropertyRef Name="RutApoderado" />
+          </Key>
+          <Property Name="RutApoderado" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="IdCurso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Colegio">
+          <Key>
+            <PropertyRef Name="IdColegio" />
+          </Key>
+          <Property Name="IdColegio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContratoPrestacionServicio">
+          <Key>
+            <PropertyRef Name="IdContrato" />
+          </Key>
+          <Property Name="IdContrato" Type="int" Nullable="false" />
+          <Property Name="FechaContrato" Type="date" Nullable="false" />
+          <Property Name="IdReserva" Type="int" Nullable="false" />
+          <Property Name="IdPaquete" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="FechaTermino" Type="date" />
+          <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Empleado_Rut" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="IdCurso" />
+          </Key>
+          <Property Name="IdCurso" Type="int" Nullable="false" />
+          <Property Name="Grado" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Anio" Type="int" Nullable="false" />
+          <Property Name="CantidadAlumnos" Type="int" Nullable="false" />
+          <Property Name="IdColegio" Type="int" Nullable="false" />
+          <Property Name="Abono" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepositoAlumno">
+          <Key>
+            <PropertyRef Name="IdDeposito" />
+          </Key>
+          <Property Name="IdDeposito" Type="int" Nullable="false" />
+          <Property Name="FechaDeposito" Type="date" Nullable="false" />
+          <Property Name="Monto" Type="int" Nullable="false" />
+          <Property Name="RutApoderado" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RutAlumno" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RutRepresentante" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepositoCurso">
+          <Key>
+            <PropertyRef Name="IdDeposito" />
+          </Key>
+          <Property Name="IdDeposito" Type="int" Nullable="false" />
+          <Property Name="NumeroCuenta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FechaDeposito" Type="date" Nullable="false" />
+          <Property Name="Monto" Type="int" Nullable="false" />
+          <Property Name="IdActividad" Type="int" Nullable="false" />
+          <Property Name="RutRepresentante" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="Rut" />
+          </Key>
+          <Property Name="Rut" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="FechaContratacion" Type="date" Nullable="false" />
+          <Property Name="Sueldo" Type="int" Nullable="false" />
+          <Property Name="Contrasena" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estado" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="IdHotel" />
+          </Key>
+          <Property Name="IdHotel" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estrellas" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaqueteTuristico">
+          <Key>
+            <PropertyRef Name="IdPaquete" />
+          </Key>
+          <Property Name="IdPaquete" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Precio" Type="int" Nullable="false" />
+          <Property Name="IdAct" Type="int" Nullable="false" />
+          <Property Name="IdSeguro" Type="int" Nullable="false" />
+          <Property Name="IdHotel" Type="int" Nullable="false" />
+          <Property Name="IdTransporte" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Representante">
+          <Key>
+            <PropertyRef Name="RutRepresentante" />
+          </Key>
+          <Property Name="RutRepresentante" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contrasena" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Curso_IdCliente" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="IdReserva" />
+          </Key>
+          <Property Name="IdReserva" Type="int" Nullable="false" />
+          <Property Name="MontoReserva" Type="int" Nullable="false" />
+          <Property Name="IdCurso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Seguro">
+          <Key>
+            <PropertyRef Name="IdSeguro" />
+          </Key>
+          <Property Name="IdSeguro" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transporte">
+          <Key>
+            <PropertyRef Name="IdTransporte" />
+          </Key>
+          <Property Name="IdTransporte" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="Actividad_Paquetes_FK">
+          <End Role="ActividadTuristica" Type="Self.ActividadTuristica" Multiplicity="1" />
+          <End Role="PaqueteTuristico" Type="Self.PaqueteTuristico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActividadTuristica">
+              <PropertyRef Name="IdAct" />
+            </Principal>
+            <Dependent Role="PaqueteTuristico">
+              <PropertyRef Name="IdAct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Alumno_Apoderado_FK">
+          <End Role="Apoderado" Type="Self.Apoderado" Multiplicity="1" />
+          <End Role="Alumno" Type="Self.Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Apoderado">
+              <PropertyRef Name="RutApoderado" />
+            </Principal>
+            <Dependent Role="Alumno">
+              <PropertyRef Name="Apoderado_Rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Apoderado_Curso_FK">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+          <End Role="Apoderado" Type="Self.Apoderado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="Apoderado">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Curso_Colegio_FK">
+          <End Role="Colegio" Type="Self.Colegio" Multiplicity="1" />
+          <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colegio">
+              <PropertyRef Name="IdColegio" />
+            </Principal>
+            <Dependent Role="Curso">
+              <PropertyRef Name="IdColegio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DepositoCursov1_Actividad_FK">
+          <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
+          <End Role="DepositoCurso" Type="Self.DepositoCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="IdActividad" />
+            </Principal>
+            <Dependent Role="DepositoCurso">
+              <PropertyRef Name="IdActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Empleado_Contratos_FK">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="ContratoPrestacionServicio" Type="Self.ContratoPrestacionServicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="Rut" />
+            </Principal>
+            <Dependent Role="ContratoPrestacionServicio">
+              <PropertyRef Name="Empleado_Rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Hotel_Paquetes_FK">
+          <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+          <End Role="PaqueteTuristico" Type="Self.PaqueteTuristico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="IdHotel" />
+            </Principal>
+            <Dependent Role="PaqueteTuristico">
+              <PropertyRef Name="IdHotel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Paquete_Contratos_FK">
+          <End Role="PaqueteTuristico" Type="Self.PaqueteTuristico" Multiplicity="1" />
+          <End Role="ContratoPrestacionServicio" Type="Self.ContratoPrestacionServicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaqueteTuristico">
+              <PropertyRef Name="IdPaquete" />
+            </Principal>
+            <Dependent Role="ContratoPrestacionServicio">
+              <PropertyRef Name="IdPaquete" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rep_Deposito_Alum_FK">
+          <End Role="Representante" Type="Self.Representante" Multiplicity="1" />
+          <End Role="DepositoAlumno" Type="Self.DepositoAlumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Representante">
+              <PropertyRef Name="RutRepresentante" />
+            </Principal>
+            <Dependent Role="DepositoAlumno">
+              <PropertyRef Name="RutRepresentante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rep_Desposito_Cur_FK">
+          <End Role="Representante" Type="Self.Representante" Multiplicity="1" />
+          <End Role="DepositoCurso" Type="Self.DepositoCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Representante">
+              <PropertyRef Name="RutRepresentante" />
+            </Principal>
+            <Dependent Role="DepositoCurso">
+              <PropertyRef Name="RutRepresentante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Representante_Curso_FK">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+          <End Role="Representante" Type="Self.Representante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="Representante">
+              <PropertyRef Name="Curso_IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Reserva_Contratos_FK">
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="1" />
+          <End Role="ContratoPrestacionServicio" Type="Self.ContratoPrestacionServicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reserva">
+              <PropertyRef Name="IdReserva" />
+            </Principal>
+            <Dependent Role="ContratoPrestacionServicio">
+              <PropertyRef Name="IdReserva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Reserva_Curso_FK">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Seguro_Paquetes_FK">
+          <End Role="Seguro" Type="Self.Seguro" Multiplicity="1" />
+          <End Role="PaqueteTuristico" Type="Self.PaqueteTuristico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seguro">
+              <PropertyRef Name="IdSeguro" />
+            </Principal>
+            <Dependent Role="PaqueteTuristico">
+              <PropertyRef Name="IdSeguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Transporte_Paquetes_FK">
+          <End Role="Transporte" Type="Self.Transporte" Multiplicity="1" />
+          <End Role="PaqueteTuristico" Type="Self.PaqueteTuristico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transporte">
+              <PropertyRef Name="IdTransporte" />
+            </Principal>
+            <Dependent Role="PaqueteTuristico">
+              <PropertyRef Name="IdTransporte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OnTourModelStoreContainer">
+          <EntitySet Name="Actividad" EntityType="Self.Actividad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActividadTuristica" EntityType="Self.ActividadTuristica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Alumno" EntityType="Self.Alumno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Apoderado" EntityType="Self.Apoderado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Colegio" EntityType="Self.Colegio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContratoPrestacionServicio" EntityType="Self.ContratoPrestacionServicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Curso" EntityType="Self.Curso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DepositoAlumno" EntityType="Self.DepositoAlumno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DepositoCurso" EntityType="Self.DepositoCurso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaqueteTuristico" EntityType="Self.PaqueteTuristico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Representante" EntityType="Self.Representante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reserva" EntityType="Self.Reserva" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seguro" EntityType="Self.Seguro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transporte" EntityType="Self.Transporte" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Actividad_Paquetes_FK" Association="Self.Actividad_Paquetes_FK">
+            <End Role="ActividadTuristica" EntitySet="ActividadTuristica" />
+            <End Role="PaqueteTuristico" EntitySet="PaqueteTuristico" />
+          </AssociationSet>
+          <AssociationSet Name="Alumno_Apoderado_FK" Association="Self.Alumno_Apoderado_FK">
+            <End Role="Apoderado" EntitySet="Apoderado" />
+            <End Role="Alumno" EntitySet="Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="Apoderado_Curso_FK" Association="Self.Apoderado_Curso_FK">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Apoderado" EntitySet="Apoderado" />
+          </AssociationSet>
+          <AssociationSet Name="Curso_Colegio_FK" Association="Self.Curso_Colegio_FK">
+            <End Role="Colegio" EntitySet="Colegio" />
+            <End Role="Curso" EntitySet="Curso" />
+          </AssociationSet>
+          <AssociationSet Name="DepositoCursov1_Actividad_FK" Association="Self.DepositoCursov1_Actividad_FK">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="DepositoCurso" EntitySet="DepositoCurso" />
+          </AssociationSet>
+          <AssociationSet Name="Empleado_Contratos_FK" Association="Self.Empleado_Contratos_FK">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="ContratoPrestacionServicio" EntitySet="ContratoPrestacionServicio" />
+          </AssociationSet>
+          <AssociationSet Name="Hotel_Paquetes_FK" Association="Self.Hotel_Paquetes_FK">
+            <End Role="Hotel" EntitySet="Hotel" />
+            <End Role="PaqueteTuristico" EntitySet="PaqueteTuristico" />
+          </AssociationSet>
+          <AssociationSet Name="Paquete_Contratos_FK" Association="Self.Paquete_Contratos_FK">
+            <End Role="PaqueteTuristico" EntitySet="PaqueteTuristico" />
+            <End Role="ContratoPrestacionServicio" EntitySet="ContratoPrestacionServicio" />
+          </AssociationSet>
+          <AssociationSet Name="Rep_Deposito_Alum_FK" Association="Self.Rep_Deposito_Alum_FK">
+            <End Role="Representante" EntitySet="Representante" />
+            <End Role="DepositoAlumno" EntitySet="DepositoAlumno" />
+          </AssociationSet>
+          <AssociationSet Name="Rep_Desposito_Cur_FK" Association="Self.Rep_Desposito_Cur_FK">
+            <End Role="Representante" EntitySet="Representante" />
+            <End Role="DepositoCurso" EntitySet="DepositoCurso" />
+          </AssociationSet>
+          <AssociationSet Name="Representante_Curso_FK" Association="Self.Representante_Curso_FK">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Representante" EntitySet="Representante" />
+          </AssociationSet>
+          <AssociationSet Name="Reserva_Contratos_FK" Association="Self.Reserva_Contratos_FK">
+            <End Role="Reserva" EntitySet="Reserva" />
+            <End Role="ContratoPrestacionServicio" EntitySet="ContratoPrestacionServicio" />
+          </AssociationSet>
+          <AssociationSet Name="Reserva_Curso_FK" Association="Self.Reserva_Curso_FK">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="Seguro_Paquetes_FK" Association="Self.Seguro_Paquetes_FK">
+            <End Role="Seguro" EntitySet="Seguro" />
+            <End Role="PaqueteTuristico" EntitySet="PaqueteTuristico" />
+          </AssociationSet>
+          <AssociationSet Name="Transporte_Paquetes_FK" Association="Self.Transporte_Paquetes_FK">
+            <End Role="Transporte" EntitySet="Transporte" />
+            <End Role="PaqueteTuristico" EntitySet="PaqueteTuristico" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnTourModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Actividad">
+          <Key>
+            <PropertyRef Name="IdActividad" />
+          </Key>
+          <Property Name="IdActividad" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DepositoCurso" Relationship="Self.DepositoCursov1_Actividad_FK" FromRole="Actividad" ToRole="DepositoCurso" />
+        </EntityType>
+        <EntityType Name="ActividadTuristica">
+          <Key>
+            <PropertyRef Name="IdAct" />
+          </Key>
+          <Property Name="IdAct" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PaqueteTuristico" Relationship="Self.Actividad_Paquetes_FK" FromRole="ActividadTuristica" ToRole="PaqueteTuristico" />
+        </EntityType>
+        <EntityType Name="Alumno">
+          <Key>
+            <PropertyRef Name="RutAlumno" />
+          </Key>
+          <Property Name="RutAlumno" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Abono" Type="Int32" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apoderado_Rut" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Apoderado" Relationship="Self.Alumno_Apoderado_FK" FromRole="Alumno" ToRole="Apoderado" />
+        </EntityType>
+        <EntityType Name="Apoderado">
+          <Key>
+            <PropertyRef Name="RutApoderado" />
+          </Key>
+          <Property Name="RutApoderado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdCurso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Alumno" Relationship="Self.Alumno_Apoderado_FK" FromRole="Apoderado" ToRole="Alumno" />
+          <NavigationProperty Name="Curso" Relationship="Self.Apoderado_Curso_FK" FromRole="Apoderado" ToRole="Curso" />
+        </EntityType>
+        <EntityType Name="Colegio">
+          <Key>
+            <PropertyRef Name="IdColegio" />
+          </Key>
+          <Property Name="IdColegio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Curso" Relationship="Self.Curso_Colegio_FK" FromRole="Colegio" ToRole="Curso" />
+        </EntityType>
+        <EntityType Name="ContratoPrestacionServicio">
+          <Key>
+            <PropertyRef Name="IdContrato" />
+          </Key>
+          <Property Name="IdContrato" Type="Int32" Nullable="false" />
+          <Property Name="FechaContrato" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdReserva" Type="Int32" Nullable="false" />
+          <Property Name="IdPaquete" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaTermino" Type="DateTime" Precision="0" />
+          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Empleado_Rut" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.Empleado_Contratos_FK" FromRole="ContratoPrestacionServicio" ToRole="Empleado" />
+          <NavigationProperty Name="PaqueteTuristico" Relationship="Self.Paquete_Contratos_FK" FromRole="ContratoPrestacionServicio" ToRole="PaqueteTuristico" />
+          <NavigationProperty Name="Reserva" Relationship="Self.Reserva_Contratos_FK" FromRole="ContratoPrestacionServicio" ToRole="Reserva" />
+        </EntityType>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="IdCurso" />
+          </Key>
+          <Property Name="IdCurso" Type="Int32" Nullable="false" />
+          <Property Name="Grado" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Anio" Type="Int32" Nullable="false" />
+          <Property Name="CantidadAlumnos" Type="Int32" Nullable="false" />
+          <Property Name="IdColegio" Type="Int32" Nullable="false" />
+          <Property Name="Abono" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Apoderado" Relationship="Self.Apoderado_Curso_FK" FromRole="Curso" ToRole="Apoderado" />
+          <NavigationProperty Name="Colegio" Relationship="Self.Curso_Colegio_FK" FromRole="Curso" ToRole="Colegio" />
+          <NavigationProperty Name="Representante" Relationship="Self.Representante_Curso_FK" FromRole="Curso" ToRole="Representante" />
+          <NavigationProperty Name="Reserva" Relationship="Self.Reserva_Curso_FK" FromRole="Curso" ToRole="Reserva" />
+        </EntityType>
+        <EntityType Name="DepositoAlumno">
+          <Key>
+            <PropertyRef Name="IdDeposito" />
+          </Key>
+          <Property Name="IdDeposito" Type="Int32" Nullable="false" />
+          <Property Name="FechaDeposito" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Monto" Type="Int32" Nullable="false" />
+          <Property Name="RutApoderado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RutAlumno" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RutRepresentante" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Representante" Relationship="Self.Rep_Deposito_Alum_FK" FromRole="DepositoAlumno" ToRole="Representante" />
+        </EntityType>
+        <EntityType Name="DepositoCurso">
+          <Key>
+            <PropertyRef Name="IdDeposito" />
+          </Key>
+          <Property Name="IdDeposito" Type="Int32" Nullable="false" />
+          <Property Name="NumeroCuenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaDeposito" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Monto" Type="Int32" Nullable="false" />
+          <Property Name="IdActividad" Type="Int32" Nullable="false" />
+          <Property Name="RutRepresentante" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Actividad" Relationship="Self.DepositoCursov1_Actividad_FK" FromRole="DepositoCurso" ToRole="Actividad" />
+          <NavigationProperty Name="Representante" Relationship="Self.Rep_Desposito_Cur_FK" FromRole="DepositoCurso" ToRole="Representante" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="Rut" />
+          </Key>
+          <Property Name="Rut" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaContratacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Sueldo" Type="Int32" Nullable="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ContratoPrestacionServicio" Relationship="Self.Empleado_Contratos_FK" FromRole="Empleado" ToRole="ContratoPrestacionServicio" />
+        </EntityType>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="IdHotel" />
+          </Key>
+          <Property Name="IdHotel" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estrellas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PaqueteTuristico" Relationship="Self.Hotel_Paquetes_FK" FromRole="Hotel" ToRole="PaqueteTuristico" />
+        </EntityType>
+        <EntityType Name="PaqueteTuristico">
+          <Key>
+            <PropertyRef Name="IdPaquete" />
+          </Key>
+          <Property Name="IdPaquete" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Precio" Type="Int32" Nullable="false" />
+          <Property Name="IdAct" Type="Int32" Nullable="false" />
+          <Property Name="IdSeguro" Type="Int32" Nullable="false" />
+          <Property Name="IdHotel" Type="Int32" Nullable="false" />
+          <Property Name="IdTransporte" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ActividadTuristica" Relationship="Self.Actividad_Paquetes_FK" FromRole="PaqueteTuristico" ToRole="ActividadTuristica" />
+          <NavigationProperty Name="ContratoPrestacionServicio" Relationship="Self.Paquete_Contratos_FK" FromRole="PaqueteTuristico" ToRole="ContratoPrestacionServicio" />
+          <NavigationProperty Name="Hotel" Relationship="Self.Hotel_Paquetes_FK" FromRole="PaqueteTuristico" ToRole="Hotel" />
+          <NavigationProperty Name="Seguro" Relationship="Self.Seguro_Paquetes_FK" FromRole="PaqueteTuristico" ToRole="Seguro" />
+          <NavigationProperty Name="Transporte" Relationship="Self.Transporte_Paquetes_FK" FromRole="PaqueteTuristico" ToRole="Transporte" />
+        </EntityType>
+        <EntityType Name="Representante">
+          <Key>
+            <PropertyRef Name="RutRepresentante" />
+          </Key>
+          <Property Name="RutRepresentante" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Curso_IdCliente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Curso" Relationship="Self.Representante_Curso_FK" FromRole="Representante" ToRole="Curso" />
+          <NavigationProperty Name="DepositoAlumno" Relationship="Self.Rep_Deposito_Alum_FK" FromRole="Representante" ToRole="DepositoAlumno" />
+          <NavigationProperty Name="DepositoCurso" Relationship="Self.Rep_Desposito_Cur_FK" FromRole="Representante" ToRole="DepositoCurso" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="IdReserva" />
+          </Key>
+          <Property Name="IdReserva" Type="Int32" Nullable="false" />
+          <Property Name="MontoReserva" Type="Int32" Nullable="false" />
+          <Property Name="IdCurso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ContratoPrestacionServicio" Relationship="Self.Reserva_Contratos_FK" FromRole="Reserva" ToRole="ContratoPrestacionServicio" />
+          <NavigationProperty Name="Curso" Relationship="Self.Reserva_Curso_FK" FromRole="Reserva" ToRole="Curso" />
+        </EntityType>
+        <EntityType Name="Seguro">
+          <Key>
+            <PropertyRef Name="IdSeguro" />
+          </Key>
+          <Property Name="IdSeguro" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PaqueteTuristico" Relationship="Self.Seguro_Paquetes_FK" FromRole="Seguro" ToRole="PaqueteTuristico" />
+        </EntityType>
+        <EntityType Name="Transporte">
+          <Key>
+            <PropertyRef Name="IdTransporte" />
+          </Key>
+          <Property Name="IdTransporte" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PaqueteTuristico" Relationship="Self.Transporte_Paquetes_FK" FromRole="Transporte" ToRole="PaqueteTuristico" />
+        </EntityType>
+        <Association Name="DepositoCursov1_Actividad_FK">
+          <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
+          <End Role="DepositoCurso" Type="Self.DepositoCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="IdActividad" />
+            </Principal>
+            <Dependent Role="DepositoCurso">
+              <PropertyRef Name="IdActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Actividad_Paquetes_FK">
+          <End Role="ActividadTuristica" Type="Self.ActividadTuristica" Multiplicity="1" />
+          <End Role="PaqueteTuristico" Type="Self.PaqueteTuristico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActividadTuristica">
+              <PropertyRef Name="IdAct" />
+            </Principal>
+            <Dependent Role="PaqueteTuristico">
+              <PropertyRef Name="IdAct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Alumno_Apoderado_FK">
+          <End Role="Apoderado" Type="Self.Apoderado" Multiplicity="1" />
+          <End Role="Alumno" Type="Self.Alumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Apoderado">
+              <PropertyRef Name="RutApoderado" />
+            </Principal>
+            <Dependent Role="Alumno">
+              <PropertyRef Name="Apoderado_Rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Apoderado_Curso_FK">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+          <End Role="Apoderado" Type="Self.Apoderado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="Apoderado">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Curso_Colegio_FK">
+          <End Role="Colegio" Type="Self.Colegio" Multiplicity="1" />
+          <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colegio">
+              <PropertyRef Name="IdColegio" />
+            </Principal>
+            <Dependent Role="Curso">
+              <PropertyRef Name="IdColegio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Empleado_Contratos_FK">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="ContratoPrestacionServicio" Type="Self.ContratoPrestacionServicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="Rut" />
+            </Principal>
+            <Dependent Role="ContratoPrestacionServicio">
+              <PropertyRef Name="Empleado_Rut" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Paquete_Contratos_FK">
+          <End Role="PaqueteTuristico" Type="Self.PaqueteTuristico" Multiplicity="1" />
+          <End Role="ContratoPrestacionServicio" Type="Self.ContratoPrestacionServicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaqueteTuristico">
+              <PropertyRef Name="IdPaquete" />
+            </Principal>
+            <Dependent Role="ContratoPrestacionServicio">
+              <PropertyRef Name="IdPaquete" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Reserva_Contratos_FK">
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="1" />
+          <End Role="ContratoPrestacionServicio" Type="Self.ContratoPrestacionServicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reserva">
+              <PropertyRef Name="IdReserva" />
+            </Principal>
+            <Dependent Role="ContratoPrestacionServicio">
+              <PropertyRef Name="IdReserva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Representante_Curso_FK">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+          <End Role="Representante" Type="Self.Representante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="Representante">
+              <PropertyRef Name="Curso_IdCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Reserva_Curso_FK">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="IdCurso" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="IdCurso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rep_Deposito_Alum_FK">
+          <End Role="Representante" Type="Self.Representante" Multiplicity="1" />
+          <End Role="DepositoAlumno" Type="Self.DepositoAlumno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Representante">
+              <PropertyRef Name="RutRepresentante" />
+            </Principal>
+            <Dependent Role="DepositoAlumno">
+              <PropertyRef Name="RutRepresentante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rep_Desposito_Cur_FK">
+          <End Role="Representante" Type="Self.Representante" Multiplicity="1" />
+          <End Role="DepositoCurso" Type="Self.DepositoCurso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Representante">
+              <PropertyRef Name="RutRepresentante" />
+            </Principal>
+            <Dependent Role="DepositoCurso">
+              <PropertyRef Name="RutRepresentante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Hotel_Paquetes_FK">
+          <End Role="Hotel" Type="Self.Hotel" Multiplicity="1" />
+          <End Role="PaqueteTuristico" Type="Self.PaqueteTuristico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="IdHotel" />
+            </Principal>
+            <Dependent Role="PaqueteTuristico">
+              <PropertyRef Name="IdHotel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Seguro_Paquetes_FK">
+          <End Role="Seguro" Type="Self.Seguro" Multiplicity="1" />
+          <End Role="PaqueteTuristico" Type="Self.PaqueteTuristico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seguro">
+              <PropertyRef Name="IdSeguro" />
+            </Principal>
+            <Dependent Role="PaqueteTuristico">
+              <PropertyRef Name="IdSeguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Transporte_Paquetes_FK">
+          <End Role="Transporte" Type="Self.Transporte" Multiplicity="1" />
+          <End Role="PaqueteTuristico" Type="Self.PaqueteTuristico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transporte">
+              <PropertyRef Name="IdTransporte" />
+            </Principal>
+            <Dependent Role="PaqueteTuristico">
+              <PropertyRef Name="IdTransporte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OnTourEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actividad" EntityType="Self.Actividad" />
+          <EntitySet Name="ActividadTuristica" EntityType="Self.ActividadTuristica" />
+          <EntitySet Name="Alumno" EntityType="Self.Alumno" />
+          <EntitySet Name="Apoderado" EntityType="Self.Apoderado" />
+          <EntitySet Name="Colegio" EntityType="Self.Colegio" />
+          <EntitySet Name="ContratoPrestacionServicio" EntityType="Self.ContratoPrestacionServicio" />
+          <EntitySet Name="Curso" EntityType="Self.Curso" />
+          <EntitySet Name="DepositoAlumno" EntityType="Self.DepositoAlumno" />
+          <EntitySet Name="DepositoCurso" EntityType="Self.DepositoCurso" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+          <EntitySet Name="Hotel" EntityType="Self.Hotel" />
+          <EntitySet Name="PaqueteTuristico" EntityType="Self.PaqueteTuristico" />
+          <EntitySet Name="Representante" EntityType="Self.Representante" />
+          <EntitySet Name="Reserva" EntityType="Self.Reserva" />
+          <EntitySet Name="Seguro" EntityType="Self.Seguro" />
+          <EntitySet Name="Transporte" EntityType="Self.Transporte" />
+          <AssociationSet Name="DepositoCursov1_Actividad_FK" Association="Self.DepositoCursov1_Actividad_FK">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="DepositoCurso" EntitySet="DepositoCurso" />
+          </AssociationSet>
+          <AssociationSet Name="Actividad_Paquetes_FK" Association="Self.Actividad_Paquetes_FK">
+            <End Role="ActividadTuristica" EntitySet="ActividadTuristica" />
+            <End Role="PaqueteTuristico" EntitySet="PaqueteTuristico" />
+          </AssociationSet>
+          <AssociationSet Name="Alumno_Apoderado_FK" Association="Self.Alumno_Apoderado_FK">
+            <End Role="Apoderado" EntitySet="Apoderado" />
+            <End Role="Alumno" EntitySet="Alumno" />
+          </AssociationSet>
+          <AssociationSet Name="Apoderado_Curso_FK" Association="Self.Apoderado_Curso_FK">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Apoderado" EntitySet="Apoderado" />
+          </AssociationSet>
+          <AssociationSet Name="Curso_Colegio_FK" Association="Self.Curso_Colegio_FK">
+            <End Role="Colegio" EntitySet="Colegio" />
+            <End Role="Curso" EntitySet="Curso" />
+          </AssociationSet>
+          <AssociationSet Name="Empleado_Contratos_FK" Association="Self.Empleado_Contratos_FK">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="ContratoPrestacionServicio" EntitySet="ContratoPrestacionServicio" />
+          </AssociationSet>
+          <AssociationSet Name="Paquete_Contratos_FK" Association="Self.Paquete_Contratos_FK">
+            <End Role="PaqueteTuristico" EntitySet="PaqueteTuristico" />
+            <End Role="ContratoPrestacionServicio" EntitySet="ContratoPrestacionServicio" />
+          </AssociationSet>
+          <AssociationSet Name="Reserva_Contratos_FK" Association="Self.Reserva_Contratos_FK">
+            <End Role="Reserva" EntitySet="Reserva" />
+            <End Role="ContratoPrestacionServicio" EntitySet="ContratoPrestacionServicio" />
+          </AssociationSet>
+          <AssociationSet Name="Representante_Curso_FK" Association="Self.Representante_Curso_FK">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Representante" EntitySet="Representante" />
+          </AssociationSet>
+          <AssociationSet Name="Reserva_Curso_FK" Association="Self.Reserva_Curso_FK">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Reserva" EntitySet="Reserva" />
+          </AssociationSet>
+          <AssociationSet Name="Rep_Deposito_Alum_FK" Association="Self.Rep_Deposito_Alum_FK">
+            <End Role="Representante" EntitySet="Representante" />
+            <End Role="DepositoAlumno" EntitySet="DepositoAlumno" />
+          </AssociationSet>
+          <AssociationSet Name="Rep_Desposito_Cur_FK" Association="Self.Rep_Desposito_Cur_FK">
+            <End Role="Representante" EntitySet="Representante" />
+            <End Role="DepositoCurso" EntitySet="DepositoCurso" />
+          </AssociationSet>
+          <AssociationSet Name="Hotel_Paquetes_FK" Association="Self.Hotel_Paquetes_FK">
+            <End Role="Hotel" EntitySet="Hotel" />
+            <End Role="PaqueteTuristico" EntitySet="PaqueteTuristico" />
+          </AssociationSet>
+          <AssociationSet Name="Seguro_Paquetes_FK" Association="Self.Seguro_Paquetes_FK">
+            <End Role="Seguro" EntitySet="Seguro" />
+            <End Role="PaqueteTuristico" EntitySet="PaqueteTuristico" />
+          </AssociationSet>
+          <AssociationSet Name="Transporte_Paquetes_FK" Association="Self.Transporte_Paquetes_FK">
+            <End Role="Transporte" EntitySet="Transporte" />
+            <End Role="PaqueteTuristico" EntitySet="PaqueteTuristico" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnTourModelStoreContainer" CdmEntityContainer="OnTourEntities">
+          <EntitySetMapping Name="Actividad">
+            <EntityTypeMapping TypeName="OnTourModel.Actividad">
+              <MappingFragment StoreEntitySet="Actividad">
+                <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActividadTuristica">
+            <EntityTypeMapping TypeName="OnTourModel.ActividadTuristica">
+              <MappingFragment StoreEntitySet="ActividadTuristica">
+                <ScalarProperty Name="IdAct" ColumnName="IdAct" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Alumno">
+            <EntityTypeMapping TypeName="OnTourModel.Alumno">
+              <MappingFragment StoreEntitySet="Alumno">
+                <ScalarProperty Name="RutAlumno" ColumnName="RutAlumno" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Abono" ColumnName="Abono" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Apoderado_Rut" ColumnName="Apoderado_Rut" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Apoderado">
+            <EntityTypeMapping TypeName="OnTourModel.Apoderado">
+              <MappingFragment StoreEntitySet="Apoderado">
+                <ScalarProperty Name="RutApoderado" ColumnName="RutApoderado" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colegio">
+            <EntityTypeMapping TypeName="OnTourModel.Colegio">
+              <MappingFragment StoreEntitySet="Colegio">
+                <ScalarProperty Name="IdColegio" ColumnName="IdColegio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContratoPrestacionServicio">
+            <EntityTypeMapping TypeName="OnTourModel.ContratoPrestacionServicio">
+              <MappingFragment StoreEntitySet="ContratoPrestacionServicio">
+                <ScalarProperty Name="IdContrato" ColumnName="IdContrato" />
+                <ScalarProperty Name="FechaContrato" ColumnName="FechaContrato" />
+                <ScalarProperty Name="IdReserva" ColumnName="IdReserva" />
+                <ScalarProperty Name="IdPaquete" ColumnName="IdPaquete" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaTermino" ColumnName="FechaTermino" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Empleado_Rut" ColumnName="Empleado_Rut" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Curso">
+            <EntityTypeMapping TypeName="OnTourModel.Curso">
+              <MappingFragment StoreEntitySet="Curso">
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+                <ScalarProperty Name="Grado" ColumnName="Grado" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="CantidadAlumnos" ColumnName="CantidadAlumnos" />
+                <ScalarProperty Name="IdColegio" ColumnName="IdColegio" />
+                <ScalarProperty Name="Abono" ColumnName="Abono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepositoAlumno">
+            <EntityTypeMapping TypeName="OnTourModel.DepositoAlumno">
+              <MappingFragment StoreEntitySet="DepositoAlumno">
+                <ScalarProperty Name="IdDeposito" ColumnName="IdDeposito" />
+                <ScalarProperty Name="FechaDeposito" ColumnName="FechaDeposito" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="RutApoderado" ColumnName="RutApoderado" />
+                <ScalarProperty Name="RutAlumno" ColumnName="RutAlumno" />
+                <ScalarProperty Name="RutRepresentante" ColumnName="RutRepresentante" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DepositoCurso">
+            <EntityTypeMapping TypeName="OnTourModel.DepositoCurso">
+              <MappingFragment StoreEntitySet="DepositoCurso">
+                <ScalarProperty Name="IdDeposito" ColumnName="IdDeposito" />
+                <ScalarProperty Name="NumeroCuenta" ColumnName="NumeroCuenta" />
+                <ScalarProperty Name="FechaDeposito" ColumnName="FechaDeposito" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
+                <ScalarProperty Name="RutRepresentante" ColumnName="RutRepresentante" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleado">
+            <EntityTypeMapping TypeName="OnTourModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="Rut" ColumnName="Rut" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="FechaContratacion" ColumnName="FechaContratacion" />
+                <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hotel">
+            <EntityTypeMapping TypeName="OnTourModel.Hotel">
+              <MappingFragment StoreEntitySet="Hotel">
+                <ScalarProperty Name="IdHotel" ColumnName="IdHotel" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Estrellas" ColumnName="Estrellas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaqueteTuristico">
+            <EntityTypeMapping TypeName="OnTourModel.PaqueteTuristico">
+              <MappingFragment StoreEntitySet="PaqueteTuristico">
+                <ScalarProperty Name="IdPaquete" ColumnName="IdPaquete" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="IdAct" ColumnName="IdAct" />
+                <ScalarProperty Name="IdSeguro" ColumnName="IdSeguro" />
+                <ScalarProperty Name="IdHotel" ColumnName="IdHotel" />
+                <ScalarProperty Name="IdTransporte" ColumnName="IdTransporte" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Representante">
+            <EntityTypeMapping TypeName="OnTourModel.Representante">
+              <MappingFragment StoreEntitySet="Representante">
+                <ScalarProperty Name="RutRepresentante" ColumnName="RutRepresentante" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="Curso_IdCliente" ColumnName="Curso_IdCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reserva">
+            <EntityTypeMapping TypeName="OnTourModel.Reserva">
+              <MappingFragment StoreEntitySet="Reserva">
+                <ScalarProperty Name="IdReserva" ColumnName="IdReserva" />
+                <ScalarProperty Name="MontoReserva" ColumnName="MontoReserva" />
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seguro">
+            <EntityTypeMapping TypeName="OnTourModel.Seguro">
+              <MappingFragment StoreEntitySet="Seguro">
+                <ScalarProperty Name="IdSeguro" ColumnName="IdSeguro" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transporte">
+            <EntityTypeMapping TypeName="OnTourModel.Transporte">
+              <MappingFragment StoreEntitySet="Transporte">
+                <ScalarProperty Name="IdTransporte" ColumnName="IdTransporte" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

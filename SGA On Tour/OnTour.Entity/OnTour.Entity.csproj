@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>671799f2-84d1-4c85-928b-a5bb6f2a8a32</ProjectGuid>
+    <ProjectGuid>{671799F2-84D1-4C85-928B-A5BB6F2A8A32}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OnTour.Entity</RootNamespace>
@@ -30,24 +30,115 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Actividad.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ActividadTuristica.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Apoderado.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Colegio.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContratoPrestacionServicio.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Curso.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepositoAlumno.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DepositoCurso.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OnTourEDM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnTourEDM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OnTourEDM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OnTourEDM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnTourEDM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PaqueteTuristico.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Representante.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reserva.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Seguro.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transporte.cs">
+      <DependentUpon>OnTourEDM.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="OnTourEDM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OnTourEDM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OnTourEDM.edmx.diagram">
+      <DependentUpon>OnTourEDM.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OnTourEDM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OnTourEDM.edmx</DependentUpon>
+      <LastGenOutput>OnTourEDM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OnTourEDM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OnTourEDM.edmx</DependentUpon>
+      <LastGenOutput>OnTourEDM.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
