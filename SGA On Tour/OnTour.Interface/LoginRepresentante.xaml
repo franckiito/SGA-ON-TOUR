@@ -9,9 +9,6 @@
              mc:Ignorable="d" Height="430" Width="550" Background="White">
     <Grid>
         <Grid Height="200" VerticalAlignment="Top">
-            <Button x:Name="BtnHome"  Background="{x:Null}" Height="60" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtnHome_Click"  >
-                <materialDesign:PackIcon Kind="Home" Width="25" Height="25"/>
-            </Button>
             <Controls:Tile HorizontalAlignment="Center" Height="Auto"  Width="Auto" Title="Representante Curso" HorizontalTitleAlignment="Center" TitleFontSize="16" Margin="175,32,181,-3" >
                 <Image Source="Images/Representante.png" Height="114" Width="132"></Image>
             </Controls:Tile>

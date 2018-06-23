@@ -35,7 +35,7 @@ namespace OnTour.Interface
 
         private void BtnHome_Click(object sender, RoutedEventArgs e)
         {
-            LoginRepresentante.
+            
         }
     }
 }

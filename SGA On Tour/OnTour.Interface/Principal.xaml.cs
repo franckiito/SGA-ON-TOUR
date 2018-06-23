@@ -30,6 +30,7 @@ namespace OnTour.Interface
         {
             this.Close();
         }
+       
 
         private void Alumno_Click(object sender, RoutedEventArgs e)
         {
@@ -50,11 +51,6 @@ namespace OnTour.Interface
             UserControl usc = new LoginGerente();
             GridMain.Children.Clear();
             GridMain.Children.Add(usc);
-        }
-
-        private void BtnHome_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }
