@@ -53,7 +53,7 @@
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>-->
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">SGA On Tour</TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">SGA On Tour - Alumno</TextBlock>
         </Grid>
         <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF31577E">
             <Grid.Effect>
