@@ -29,8 +29,9 @@
           <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Abono" Type="int" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Apoderado_Rut" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Contrasena" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdCurso" Type="int" Nullable="false" />
+          <Property Name="RutApoderado" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Apoderado">
           <Key>
@@ -40,7 +41,6 @@
           <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="IdCurso" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Colegio">
           <Key>
@@ -183,18 +183,18 @@
               <PropertyRef Name="RutApoderado" />
             </Principal>
             <Dependent Role="Alumno">
-              <PropertyRef Name="Apoderado_Rut" />
+              <PropertyRef Name="RutApoderado" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Apoderado_Curso_FK">
+        <Association Name="Alumno_Curso_FK">
           <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
-          <End Role="Apoderado" Type="Self.Apoderado" Multiplicity="*" />
+          <End Role="Alumno" Type="Self.Alumno" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Curso">
               <PropertyRef Name="IdCurso" />
             </Principal>
-            <Dependent Role="Apoderado">
+            <Dependent Role="Alumno">
               <PropertyRef Name="IdCurso" />
             </Dependent>
           </ReferentialConstraint>
@@ -368,9 +368,9 @@
             <End Role="Apoderado" EntitySet="Apoderado" />
             <End Role="Alumno" EntitySet="Alumno" />
           </AssociationSet>
-          <AssociationSet Name="Apoderado_Curso_FK" Association="Self.Apoderado_Curso_FK">
+          <AssociationSet Name="Alumno_Curso_FK" Association="Self.Alumno_Curso_FK">
             <End Role="Curso" EntitySet="Curso" />
-            <End Role="Apoderado" EntitySet="Apoderado" />
+            <End Role="Alumno" EntitySet="Alumno" />
           </AssociationSet>
           <AssociationSet Name="Curso_Colegio_FK" Association="Self.Curso_Colegio_FK">
             <End Role="Colegio" EntitySet="Colegio" />
@@ -452,9 +452,11 @@
           <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Abono" Type="Int32" Nullable="false" />
           <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Apoderado_Rut" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdCurso" Type="Int32" Nullable="false" />
+          <Property Name="RutApoderado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Apoderado" Relationship="Self.Alumno_Apoderado_FK" FromRole="Alumno" ToRole="Apoderado" />
+          <NavigationProperty Name="Curso" Relationship="Self.Alumno_Curso_FK" FromRole="Alumno" ToRole="Curso" />
         </EntityType>
         <EntityType Name="Apoderado">
           <Key>
@@ -464,9 +466,7 @@
           <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IdCurso" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Alumno" Relationship="Self.Alumno_Apoderado_FK" FromRole="Apoderado" ToRole="Alumno" />
-          <NavigationProperty Name="Curso" Relationship="Self.Apoderado_Curso_FK" FromRole="Apoderado" ToRole="Curso" />
         </EntityType>
         <EntityType Name="Colegio">
           <Key>
@@ -503,7 +503,7 @@
           <Property Name="CantidadAlumnos" Type="Int32" Nullable="false" />
           <Property Name="IdColegio" Type="Int32" Nullable="false" />
           <Property Name="Abono" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Apoderado" Relationship="Self.Apoderado_Curso_FK" FromRole="Curso" ToRole="Apoderado" />
+          <NavigationProperty Name="Alumno" Relationship="Self.Alumno_Curso_FK" FromRole="Curso" ToRole="Alumno" />
           <NavigationProperty Name="Colegio" Relationship="Self.Curso_Colegio_FK" FromRole="Curso" ToRole="Colegio" />
           <NavigationProperty Name="Representante" Relationship="Self.Representante_Curso_FK" FromRole="Curso" ToRole="Representante" />
           <NavigationProperty Name="Reserva" Relationship="Self.Reserva_Curso_FK" FromRole="Curso" ToRole="Reserva" />
@@ -646,18 +646,18 @@
               <PropertyRef Name="RutApoderado" />
             </Principal>
             <Dependent Role="Alumno">
-              <PropertyRef Name="Apoderado_Rut" />
+              <PropertyRef Name="RutApoderado" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Apoderado_Curso_FK">
+        <Association Name="Alumno_Curso_FK">
           <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
-          <End Role="Apoderado" Type="Self.Apoderado" Multiplicity="*" />
+          <End Role="Alumno" Type="Self.Alumno" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Curso">
               <PropertyRef Name="IdCurso" />
             </Principal>
-            <Dependent Role="Apoderado">
+            <Dependent Role="Alumno">
               <PropertyRef Name="IdCurso" />
             </Dependent>
           </ReferentialConstraint>
@@ -794,7 +794,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="OnTourEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="OnTourEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Actividad" EntityType="Self.Actividad" />
           <EntitySet Name="ActividadTuristica" EntityType="Self.ActividadTuristica" />
           <EntitySet Name="Alumno" EntityType="Self.Alumno" />
@@ -823,9 +823,9 @@
             <End Role="Apoderado" EntitySet="Apoderado" />
             <End Role="Alumno" EntitySet="Alumno" />
           </AssociationSet>
-          <AssociationSet Name="Apoderado_Curso_FK" Association="Self.Apoderado_Curso_FK">
+          <AssociationSet Name="Alumno_Curso_FK" Association="Self.Alumno_Curso_FK">
             <End Role="Curso" EntitySet="Curso" />
-            <End Role="Apoderado" EntitySet="Apoderado" />
+            <End Role="Alumno" EntitySet="Alumno" />
           </AssociationSet>
           <AssociationSet Name="Curso_Colegio_FK" Association="Self.Curso_Colegio_FK">
             <End Role="Colegio" EntitySet="Colegio" />
@@ -877,7 +877,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OnTourModelStoreContainer" CdmEntityContainer="OnTourEntities">
+        <EntityContainerMapping StorageEntityContainer="OnTourModelStoreContainer" CdmEntityContainer="OnTourEntities1">
           <EntitySetMapping Name="Actividad">
             <EntityTypeMapping TypeName="OnTourModel.Actividad">
               <MappingFragment StoreEntitySet="Actividad">
@@ -903,8 +903,9 @@
                 <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
                 <ScalarProperty Name="Abono" ColumnName="Abono" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Apoderado_Rut" ColumnName="Apoderado_Rut" />
                 <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+                <ScalarProperty Name="RutApoderado" ColumnName="RutApoderado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -915,7 +916,6 @@
                 <ScalarProperty Name="Nombres" ColumnName="Nombres" />
                 <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

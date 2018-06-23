@@ -4,27 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4accc16f525c4364b73f37dec9421141" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="OnTourModel.Actividad" Width="1.5" PointX="0.5" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.ActividadTuristica" Width="1.5" PointX="11" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.Alumno" Width="1.5" PointX="5.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.Apoderado" Width="1.5" PointX="2.625" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.Colegio" Width="1.5" PointX="1.5" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.ContratoPrestacionServicio" Width="1.5" PointX="8" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.Curso" Width="1.5" PointX="1.5" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.DepositoAlumno" Width="1.5" PointX="5.75" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.DepositoCurso" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.Empleado" Width="1.5" PointX="7.875" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.Hotel" Width="1.5" PointX="14.375" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.PaqueteTuristico" Width="1.5" PointX="11" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.Representante" Width="1.5" PointX="4.125" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.Reserva" Width="1.5" PointX="4.625" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.Seguro" Width="1.5" PointX="14.375" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnTourModel.Transporte" Width="1.5" PointX="11.625" PointY="10.25" IsExpanded="true" />
+      <Diagram DiagramId="bfb64def41c8400fa70ee8669bf03653" Name="Diagram1">
+        <EntityTypeShape EntityType="OnTourModel.Actividad" Width="1.5" PointX="6" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.ActividadTuristica" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.Alumno" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.Apoderado" Width="1.5" PointX="3.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.Colegio" Width="1.5" PointX="1.5" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.ContratoPrestacionServicio" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.Curso" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.DepositoAlumno" Width="1.5" PointX="5.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.DepositoCurso" Width="1.5" PointX="8.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.Empleado" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.Hotel" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.PaqueteTuristico" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.Representante" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.Reserva" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.Seguro" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnTourModel.Transporte" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
         <AssociationConnector Association="OnTourModel.DepositoCursov1_Actividad_FK" ManuallyRouted="false" />
         <AssociationConnector Association="OnTourModel.Actividad_Paquetes_FK" ManuallyRouted="false" />
         <AssociationConnector Association="OnTourModel.Alumno_Apoderado_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="OnTourModel.Apoderado_Curso_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="OnTourModel.Alumno_Curso_FK" ManuallyRouted="false" />
         <AssociationConnector Association="OnTourModel.Curso_Colegio_FK" ManuallyRouted="false" />
         <AssociationConnector Association="OnTourModel.Empleado_Contratos_FK" ManuallyRouted="false" />
         <AssociationConnector Association="OnTourModel.Paquete_Contratos_FK" ManuallyRouted="false" />

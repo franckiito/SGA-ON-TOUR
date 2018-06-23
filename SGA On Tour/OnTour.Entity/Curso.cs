@@ -17,7 +17,7 @@ namespace OnTour.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Curso()
         {
-            this.Apoderado = new HashSet<Apoderado>();
+            this.Alumno = new HashSet<Alumno>();
             this.Representante = new HashSet<Representante>();
             this.Reserva = new HashSet<Reserva>();
         }
@@ -30,7 +30,7 @@ namespace OnTour.Entity
         public int Abono { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Apoderado> Apoderado { get; set; }
+        public virtual ICollection<Alumno> Alumno { get; set; }
         public virtual Colegio Colegio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Representante> Representante { get; set; }

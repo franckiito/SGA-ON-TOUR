@@ -13,10 +13,10 @@ namespace OnTour.Entity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OnTourEntities : DbContext
+    public partial class OnTourEntities1 : DbContext
     {
-        public OnTourEntities()
-            : base("name=OnTourEntities")
+        public OnTourEntities1()
+            : base("name=OnTourEntities1")
         {
         }
     

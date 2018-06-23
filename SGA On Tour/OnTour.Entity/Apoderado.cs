@@ -24,10 +24,8 @@ namespace OnTour.Entity
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Telefono { get; set; }
-        public int IdCurso { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Alumno> Alumno { get; set; }
-        public virtual Curso Curso { get; set; }
     }
 }

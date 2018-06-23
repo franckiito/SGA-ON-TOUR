@@ -19,9 +19,11 @@ namespace OnTour.Entity
         public string Apellidos { get; set; }
         public int Abono { get; set; }
         public string Telefono { get; set; }
-        public string Apoderado_Rut { get; set; }
         public string Contrasena { get; set; }
+        public int IdCurso { get; set; }
+        public string RutApoderado { get; set; }
     
         public virtual Apoderado Apoderado { get; set; }
+        public virtual Curso Curso { get; set; }
     }
 }
