@@ -18,9 +18,9 @@ namespace OnTour.Interface
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class UserRepresentante : Window
+    public partial class UserGerente : Window
     {
-        public UserRepresentante()
+        public UserGerente()
         {
             InitializeComponent();
         }
@@ -52,14 +52,6 @@ namespace OnTour.Interface
                     usc = new InformacionGira();
                     GridMain.Children.Add(usc);
                     break;
-                case "ItemDepositoCurso":
-                    usc = new DepositoCurso();
-                    GridMain.Children.Add(usc);
-                    break;
-                case "ItemDepositoAlumno":
-                    usc = new DepositoAlumno();
-                    GridMain.Children.Add(usc);
-                    break;
                 default:
                     break;
             }
@@ -68,6 +60,11 @@ namespace OnTour.Interface
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

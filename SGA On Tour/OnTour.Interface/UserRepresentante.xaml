@@ -82,13 +82,25 @@
                     <ListViewItem x:Name="ItemRegistrosMonetarios" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Coin" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Estado Monetario" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Registros Monetarios" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemInformacionGira" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Information" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Informacion Gira" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemDepositoCurso" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Deposito Curso" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemDepositoAlumno" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="AccountBox" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Deposito a Alumno" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

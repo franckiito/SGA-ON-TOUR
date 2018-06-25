@@ -30,12 +30,18 @@ namespace OnTour.Interface
             rut = TxtRut.Text;
             clave = TxtClave.Text;
 
+            if (rut == "123")
+            {
+                if (clave == "123")
+                {
+
+                    UserRepresentante representante = new UserRepresentante();
+                    representante.Show();
+                }
+            }
+
 
         }
-
-        private void BtnHome_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        
     }
 }

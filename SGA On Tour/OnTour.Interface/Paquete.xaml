@@ -1,0 +1,41 @@
+﻿<Window x:Class="OnTour.Interface.Paquete"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnTour.Interface"
+        mc:Ignorable="d"
+        Height="450" Width="800" Background="White" Visibility="Visible">
+    <Grid>
+        <Grid Height="60" VerticalAlignment="Top" Background="#FFFFC1C1">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Paquete</TextBlock>
+        </Grid>
+        <Grid Height="390" VerticalAlignment="Bottom">
+            <Grid Height="380" VerticalAlignment="Top">
+                <Label Content="Descripcion" HorizontalAlignment="Left" Margin="217,89,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="371,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+                <Label Content="Precio" HorizontalAlignment="Left" Margin="217,129,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="371,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+                <Label Content="Actividad" HorizontalAlignment="Left" Margin="217,163,0,0" VerticalAlignment="Top"/>
+                <ComboBox HorizontalAlignment="Left" Margin="371,163,0,0" VerticalAlignment="Top" Width="120"/>
+
+                <Label Content="Seguro" HorizontalAlignment="Left" Margin="217,194,0,0" VerticalAlignment="Top"/>
+                <ComboBox HorizontalAlignment="Left" Margin="371,194,0,0" VerticalAlignment="Top" Width="120"/>
+
+
+                <Label Content="Hotel" HorizontalAlignment="Left" Margin="217,225,0,0" VerticalAlignment="Top"/>
+                <ComboBox HorizontalAlignment="Left" Margin="371,225,0,0" VerticalAlignment="Top" Width="120"/>
+
+                <Label Content="Transporte" HorizontalAlignment="Left" Margin="217,256,0,0" VerticalAlignment="Top"/>
+                <ComboBox HorizontalAlignment="Left" Margin="371,256,0,0" VerticalAlignment="Top" Width="120"/>
+
+                <Button Content="Registrar Paquete" HorizontalAlignment="Left" Margin="440,320,0,0" VerticalAlignment="Top" Width="123" Height="23"/>
+
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</Window>

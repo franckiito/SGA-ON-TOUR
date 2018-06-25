@@ -19,5 +19,6 @@ namespace OnTour.Datos
         public string RutApoderado { get; set; }
         
 
+
     }
 }

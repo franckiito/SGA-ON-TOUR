@@ -44,12 +44,16 @@ namespace OnTour.Interface
 
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
-                case "ItemRegistrosMonetarios":
-                    usc = new RegistrosMonetarios();
+                case "ItemReportesMonetarios":
+                    usc = new ReportesMonetarios();
                     GridMain.Children.Add(usc);
                     break;
-                case "ItemInformacionGira":
-                    usc = new InformacionGira();
+                case "ItemAdministracionContrato":
+                    usc = new AdministracionContrato();
+                    GridMain.Children.Add(usc);
+                    break;
+                case "ItemAdministracionPaquetes":
+                    usc = new AdministracionPaquete();
                     GridMain.Children.Add(usc);
                     break;
                 default:

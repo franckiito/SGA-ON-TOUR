@@ -69,6 +69,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdministracionPaquete.xaml.cs">
+      <DependentUpon>AdministracionPaquete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paquete.xaml.cs">
+      <DependentUpon>Paquete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DepositoAlumno.xaml.cs">
+      <DependentUpon>DepositoAlumno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Contrato.xaml.cs">
+      <DependentUpon>Contrato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DepositoCurso.xaml.cs">
+      <DependentUpon>DepositoCurso.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InformacionGira.xaml.cs">
       <DependentUpon>InformacionGira.xaml</DependentUpon>
     </Compile>
@@ -84,9 +99,35 @@
     <Compile Include="Principal.xaml.cs">
       <DependentUpon>Principal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdministracionContrato.xaml.cs">
+      <DependentUpon>AdministracionContrato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesMonetarios.xaml.cs">
+      <DependentUpon>ReportesMonetarios.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegistrosMonetarios.xaml.cs">
       <DependentUpon>RegistrosMonetarios.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdministracionPaquete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Paquete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DepositoAlumno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Contrato.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DepositoCurso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InformacionGira.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +147,14 @@
     <Page Include="Principal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdministracionContrato.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReportesMonetarios.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserRepresentante.xaml">
       <Generator>MSBuild:Compile</Generator>

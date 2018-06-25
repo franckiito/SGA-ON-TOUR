@@ -32,7 +32,22 @@
     </Window.Triggers>
 
     <Grid>
-        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" Margin="0,0,-6,0"/>
+        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" Margin="0,0,-6,0">
+            <Label Content="Paquete Turistico" HorizontalAlignment="Left" Margin="118,46,0,0" VerticalAlignment="Top" Height="39" Width="124"/>
+            <ComboBox HorizontalAlignment="Left" Margin="294,46,0,0" VerticalAlignment="Top" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Height="460" Margin="530,47,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="414"/>
+            <Label Content="Descripcion" HorizontalAlignment="Left" Margin="118,112,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="75" Margin="242,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="172"/>
+            <Label Content="Precio" HorizontalAlignment="Left" Margin="118,217,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="26" Margin="242,217,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="172"/>
+            <Label Content="Descrip Seguro" HorizontalAlignment="Left" Margin="118,282,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.211,0.393"/>
+            <ComboBox HorizontalAlignment="Left" Margin="242,282,0,0" VerticalAlignment="Top" Width="172" Height="69"/>
+            <Label Content="Hotel" HorizontalAlignment="Left" Margin="118,359,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.372,-0.839"/>
+            <ComboBox HorizontalAlignment="Left" Margin="242,359,0,0" VerticalAlignment="Top" Width="172"/>
+            <Label Content="Transporte" HorizontalAlignment="Left" Margin="118,415,0,0" VerticalAlignment="Top"/>
+            <ComboBox HorizontalAlignment="Left" Margin="242,415,0,0" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.501,-0.075"/>
+            <Button Content="Guardar Cambios" HorizontalAlignment="Left" Margin="167,480,0,0" VerticalAlignment="Top" Width="194" RenderTransformOrigin="0.988,0.04"/>
+        </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
             <Button x:Name="BtnExit"  Background="{x:Null}" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Click="BtnExit_Click" >
                 <materialDesign:PackIcon Kind="ExitToApp" Width="25" Height="25"/>
@@ -53,7 +68,7 @@
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>-->
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">SGA On Tour - Gerente</TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">SGA On Tour</TextBlock>
         </Grid>
         <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF31577E">
             <Grid.Effect>
@@ -76,25 +91,19 @@
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
 
-                    
+
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
-                    <ListViewItem x:Name="ItemReportesMonetarios" Height="60">
+                    <ListViewItem x:Name="ItemRegistrosMonetarios" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Coin" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Reportes Monetarios" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Estado Monetario" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ItemAdministracionContrato" Height="60">
+                    <ListViewItem x:Name="ItemInformacionGira" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Settings" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Administracion Contratos" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemAdministracionPaquetes" Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Package" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Administracion Paquetes" VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="Information" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Informacion Gira" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

@@ -30,6 +30,15 @@ namespace OnTour.Interface
             rut = TxtRut.Text;
             clave = TxtClave.Text;
 
+            if (rut == "123")
+            {
+                if (clave == "123")
+                {
+                    UserGerente gerente = new UserGerente();
+                    gerente.Show();
+                }
+            }
+
 
         }
     }

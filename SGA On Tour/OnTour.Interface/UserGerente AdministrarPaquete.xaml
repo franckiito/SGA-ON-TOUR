@@ -32,7 +32,12 @@
     </Window.Triggers>
 
     <Grid>
-        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" Margin="0,0,-6,0"/>
+        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" Margin="0,0,-6,0">
+            <Label Content="Paquete Turistico" HorizontalAlignment="Left" Margin="77,74,0,0" VerticalAlignment="Top" Height="54" Width="102"/>
+            <ComboBox HorizontalAlignment="Left" Margin="241,74,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.051,0.738"/>
+            <TextBox HorizontalAlignment="Left" Height="409" Margin="545,74,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="369"/>
+            <Button Content="Editar Paquete Turistico" HorizontalAlignment="Left" Margin="77,150,0,0" VerticalAlignment="Top" Width="207"/>
+        </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
             <Button x:Name="BtnExit"  Background="{x:Null}" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Click="BtnExit_Click" >
                 <materialDesign:PackIcon Kind="ExitToApp" Width="25" Height="25"/>
@@ -53,7 +58,7 @@
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>-->
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">SGA On Tour - Gerente</TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">SGA On Tour</TextBlock>
         </Grid>
         <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF31577E">
             <Grid.Effect>
@@ -76,25 +81,19 @@
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
 
-                    
+
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
-                    <ListViewItem x:Name="ItemReportesMonetarios" Height="60">
+                    <ListViewItem x:Name="ItemRegistrosMonetarios" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Coin" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Reportes Monetarios" VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Estado Monetario" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ItemAdministracionContrato" Height="60">
+                    <ListViewItem x:Name="ItemInformacionGira" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Settings" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Administracion Contratos" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem x:Name="ItemAdministracionPaquetes" Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Package" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Administracion Paquetes" VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="Information" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Informacion Gira" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
