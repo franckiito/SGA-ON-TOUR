@@ -28,9 +28,9 @@ namespace OnTour.Interface
         {
             string rut, clave;
             rut = TxtRut.Text;
-            clave = TxtClave.Text;
+            clave = TxtClave.Password;
 
-            if (rut == "123")
+            if (rut == "Gerente")
             {
                 if (clave == "123")
                 {

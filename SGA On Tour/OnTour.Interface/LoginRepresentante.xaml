@@ -15,7 +15,7 @@
         </Grid>
         <Grid Height="230" VerticalAlignment="Bottom">
             <TextBox x:Name="TxtRut" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Rut" Height="23"  Width="154" Margin="195,60,201,144"/>
-            <TextBox x:Name="TxtClave" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Contraseña" Height="23"  Width="154" Margin="195,91,201,113"/>
+            <PasswordBox x:Name="TxtClave" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Contraseña" Height="23"  Width="154" Margin="195,91,201,113"/>
 
             <Button x:Name="BtnIngresar" Content="Ingresar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="154" Margin="195,153,0,0" Click="BtnIngresar_Click"/>
         </Grid>
